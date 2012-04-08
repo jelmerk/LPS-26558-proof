@@ -135,7 +135,6 @@ public class Main {
 	}
 
 	private static void reconfigureLiferay() throws IOException {
-		initializeUtils();
 		reconfigureEntityCache();
 		reconfigureFinderCache();
 	}
