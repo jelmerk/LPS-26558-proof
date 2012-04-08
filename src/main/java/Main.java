@@ -57,6 +57,9 @@ public class Main {
 			userCacheModel.digest = "whatever";
 			userCacheModel.reminderQueryQuestion = "what-is-your-father's-middle-name";
 			userCacheModel.reminderQueryAnswer = "brian";
+			userCacheModel.languageId = "en_US";
+			userCacheModel.firstName = "bobby";
+			userCacheModel.lastName = "tables";
 	}
 
 
