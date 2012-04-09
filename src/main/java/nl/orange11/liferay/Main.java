@@ -25,16 +25,6 @@ import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Crudely crafted proof of concept for the vulnerability described in
- * <a href="http://issues.liferay.com/browse/LPS-26558">LPS-26558</a> it targets the default liferay ce 6.1
- * distributable.
- * <p/>
- * To run it, download liferay ce 6.1 from  http://www.liferay.com/downloads/liferay-portal/available-releases,unzip it,
- * start it  and configure it with default settings. Then execute this program and follow the instructions in the
- * console. It should grant you administrative access as well as make your Liferay installation really really slow
- * (but i think that's a liferay bug)
- */
 public class Main {
 
     private static final String NEW_TARGET_USER_EMAIL = "liferayattacker@host.nl";
