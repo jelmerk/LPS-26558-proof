@@ -1,3 +1,4 @@
+package nl.orange11.liferay;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -38,8 +39,8 @@ public final class UrlBuilder {
             String encodedValue = urlEncode(parameter.value, charset);
 
             builder.append(parameter.name)
-                   .append('=')
-                   .append(encodedValue);
+                    .append('=')
+                    .append(encodedValue);
 
         }
         return builder.toString();
