@@ -17,3 +17,6 @@ in the target folder this will create a file called liferay-memcached-exploit-1.
 3) unzip liferay-memcached-exploit-1.0-zip-with-jars.zip somewhere and run the exploit with
 
 java -jar liferay-memcached-exploit-1.0.jar
+
+
+Now follow the instructions in the console. It should grant you administrative access to the liferay instance
